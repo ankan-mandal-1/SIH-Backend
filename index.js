@@ -24,6 +24,10 @@ app.use(express.json())
 
 connectDB()
 
+app.get("/", (req, res) => {
+    res.status(200).json({message: "Server Running"})
+})
+
 app.use("/auth", authRoute)
 app.use("/product", productRoute)
 app.use("/order", orderRoute)
