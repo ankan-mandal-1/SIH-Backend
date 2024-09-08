@@ -18,11 +18,11 @@ cloudinary.config({
     api_secret: process.env.API_SECRET // Click 'View Credentials' below to copy your API secret
 });
 
+connectDB()
+
 app.use(cors())
 app.use(cookieParser())
 app.use(express.json())
-
-connectDB()
 
 app.get("/", (req, res) => {
     res.status(200).json({message: "Server Running"})
